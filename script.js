@@ -557,6 +557,61 @@ document.addEventListener('keydown', (event) => {
     renderMarkup();
   }
 
+  const symbol = document.querySelector(`.key[data-key="${event.keyCode}"]`).innerHTML;
+  const keyCode = document.querySelector(`.key[data-key="${event.keyCode}"]`).getAttribute('data-key');
+
+  if (data[keyCode].isLetter) {
+    state.value += symbol;
+    renderMarkup();
+  }
+
+  if (keyCode === '9') {
+    state.value += '  ';
+    renderMarkup();
+  }
+
+  if (keyCode === '13') {
+    state.value += '\n';
+    renderMarkup();
+  }
+
+  if (keyCode === '32') {
+    state.value += ' ';
+    renderMarkup();
+  }
+
+  if (keyCode === '8') {
+    const backSpace = state.value.slice(0, -1);
+    state.value = backSpace;
+    renderMarkup();
+  }
+
+  if (keyCode === '46') {
+    const del = state.value.slice(0, -1);
+    state.value = del;
+    renderMarkup();
+  }
+
+  if (keyCode === '38') {
+    state.value += '▲';
+    renderMarkup();
+  }
+
+  if (keyCode === '37') {
+    state.value += '◄';
+    renderMarkup();
+  }
+
+  if (keyCode === '40') {
+    state.value += '▼';
+    renderMarkup();
+  }
+
+  if (keyCode === '39') {
+    state.value += '►';
+    renderMarkup();
+  }
+
   document.querySelector(`.key[data-key="${event.keyCode}"]`).classList.add('key-pressed');
 });
 
@@ -587,6 +642,53 @@ document.addEventListener('click', (event) => {
 
     if (keyCode === '20') {
       state.isUpperCase = !state.isUpperCase;
+      renderMarkup();
+    }
+
+    if (keyCode === '9') {
+      state.value += '  ';
+      renderMarkup();
+    }
+
+    if (keyCode === '13') {
+      state.value += '\n';
+      renderMarkup();
+    }
+
+    if (keyCode === '32') {
+      state.value += ' ';
+      renderMarkup();
+    }
+
+    if (keyCode === '8') {
+      const backSpace = state.value.slice(0, -1);
+      state.value = backSpace;
+      renderMarkup();
+    }
+
+    if (keyCode === '46') {
+      const del = state.value.slice(0, -1);
+      state.value = del;
+      renderMarkup();
+    }
+
+    if (keyCode === '38') {
+      state.value += '▲';
+      renderMarkup();
+    }
+
+    if (keyCode === '37') {
+      state.value += '◄';
+      renderMarkup();
+    }
+
+    if (keyCode === '40') {
+      state.value += '▼';
+      renderMarkup();
+    }
+
+    if (keyCode === '39') {
+      state.value += '►';
       renderMarkup();
     }
   }
