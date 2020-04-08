@@ -568,7 +568,9 @@ document.addEventListener('keyup', (event) => {
     renderMarkup();
   }
 
-  document.querySelector(`.key[data-key="${event.keyCode}"]`).classList.remove('key-pressed');
+  if (document.querySelector(`.key[data-key="${event.keyCode}"]`).classList.contains('key-pressed')) {
+    document.querySelector(`.key[data-key="${event.keyCode}"]`).classList.remove('key-pressed');
+  }
 });
 
 document.addEventListener('click', (event) => {
