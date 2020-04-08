@@ -56,6 +56,8 @@
     justify-content: space-between;
 }
 
+.key-digit,
+.key-special,
 .key {
     display: inline-flex;
     justify-content: center;
@@ -71,6 +73,8 @@
     cursor: pointer;
 }
 
+.key-digit:hover,
+.key-special:hover,
 .key:hover {
     background-color: white;
     color: #3498db;
@@ -78,6 +82,8 @@
 
 .key-pressed {
     border-radius: 30px;
+    background-color: white;
+    color: #3498db;
 }
 
 .which-8 {
@@ -104,4 +110,15 @@
 }
 .which-32 {
     width: 330px;
+}
+
+.text {
+    width: 257px;
+    border: 1px solid;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.caps-active { 
+    border-color: red;
 }
